@@ -37,9 +37,12 @@ class Obstacle{
 
     // Game over function
     this.gameOver = function(){
-        fill(255,0,0)
+        noFill()
+        strokeWeight(1);
+        stroke(0)
         rect(width / 2 - 55, height / 2 - 90, 100,20)
         fill(0)
+        noStroke()
         text("Game over!", width / 2 - 35, height / 2 - 77)
     }
   }

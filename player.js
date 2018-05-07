@@ -10,14 +10,18 @@ class Player {
 
     this.show = function () {
       // Define square/player
-      fill(255)
+      fill("#DC3545")
+      stroke("#C5161F")
+      strokeWeight(1)
       rect(this.x, this.y, 25, 25);
 
       // Add eyes to square
       fill(0)
-      noStroke()
+      strokeWeight(1);
+      stroke(0)
       ellipse(this.x + 10, this.y + 5, 5, 5)
       ellipse(this.x + 25, this.y + 5, 5, 5)
+      noStroke()
     };
 
     // Update player
