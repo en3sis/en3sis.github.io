@@ -86,6 +86,7 @@ function draw() {
 	}
 }
 
+// Clouds by http://alpha.editor.p5js.org/jackiezen/sketches/rJEziNOR
 function cloud(x, y, size) {
 	fill("#E0DFDF");
 	noStroke();
