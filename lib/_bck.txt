@@ -1,0 +1,44 @@
+
+function setup() {
+  
+  createCanvas(600, 600);
+  fill(0)
+}
+
+// Create new Array
+let arr =[]
+
+// Define Ellipe
+class Ellips{
+  constructor(x,y,w,h){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    ellipse(x,y,w,h)
+  }
+}
+
+function drawEli(){
+  for (let i = 0; i < 2; i++){
+    var rX = floor(random(400))
+    var rY = floor(random(400))
+    let forms = new Ellips(rX,rY,25,25)
+    arr.push(forms)
+  }
+   // Calculate the distance between Elipses
+   let d = int(dist(arr[0].x,arr[0].y,arr[1].x, arr[1].y))
+   // Draw a line from point A to point B
+   line(arr[0].x,arr[0].y,arr[1].x, arr[1].y)
+   fill(0,255,0)
+   text(d, rX, rY)
+   noLoop()
+}
+
+function draw() {
+  background(200);
+  drawEli()
+}
+
+
+
