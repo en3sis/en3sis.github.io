@@ -44,6 +44,10 @@ function draw() {
   stroke(0)
   line(0,225,width, 225)
 
+  if(mouseIsPressed){
+    player.up()
+  }
+
 }
 
 function keyPressed(){
@@ -52,6 +56,8 @@ function keyPressed(){
     return false;
   }
 }
+
+
 
 // function keyReleased(){
 //   if(key === ' '){
