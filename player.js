@@ -9,27 +9,30 @@ class Player {
     this.velocity = 2
 
     this.show = function () {
+      // Define square/player
       fill(255)
-      // rotate(20,x)
       rect(this.x, this.y, 25, 25);
 
-      // EYES
+      // Add eyes to square
       fill(0)
       noStroke()
       ellipse(this.x + 10, this.y + 5, 5, 5)
       ellipse(this.x + 25, this.y + 5, 5, 5)
     };
 
+    // Update player
     this.update = function () {
       if(this.y < 200){
         this.down()
       }
     };
 
+    // Move player back to origina position
     this.down = function(){
       this.y += this.velocity / this.gravity
     }
 
+    // Limite the jump to one
     this.up = function () {
       if(this.y <= 190){
         return
