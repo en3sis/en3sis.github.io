@@ -45,6 +45,8 @@ class Obstacle{
         fill(0)
         noStroke()
         text("Game over!", width / 2 - 35, height / 2 - 77)
+        endSound.setVolume(0.1)
+        endSound.play()
     }
   }
 }

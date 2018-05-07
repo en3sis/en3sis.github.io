@@ -42,6 +42,8 @@ class Player {
         return
       }else{
        this.y -= this.jump  * this.velocity
+       jumpSound.setVolume(0.1)
+       jumpSound.play()
       }
     };
   }

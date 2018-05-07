@@ -1,9 +1,11 @@
 // Variables declaration
-let player,score, velocity, canJump
+let player, score, velocity, canJump, jumpSound, endSound
+
 
 
 // Starting values
 velocity = 3
+
 
 
 let obstacles = []
@@ -13,10 +15,16 @@ let cloudAppear = [100, 400, 700, 1200, 1500,1900,2000,2200,2400,3000]
 function setup() {
   createCanvas(400, 400)
 
+  // Sounds by https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
+  soundFormats('mp3', 'ogg');
+  jumpSound = loadSound('assets/sound/jump.ogg')
+  endSound = loadSound('assets/sound/end.ogg')
+
   // Create new Objects
   player = new Player()
   obstacles.push(new Obstacle)
   score = new Score
+
 }
 
 function draw() {
@@ -31,7 +39,7 @@ function draw() {
   var newCloud = {
     xpos: width,
     ypos: height / 2 - 100,
-    size: random(0.8, 1.3)
+    size: random(1, 1.7)
   };
 
   // Generate new Obstacle
