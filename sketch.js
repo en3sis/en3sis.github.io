@@ -17,16 +17,18 @@ let cloudAppear = [100, 400, 700, 1200, 1500,1900,2000,2200,2400,3000]
 function preload(){
   baseSound = loadSound('assets/sound/base.mp3')
 }
+
 function setup() {
   createCanvas(400, 400)
-  soundFormats('mp3', 'ogg');
-  jumpSound = loadSound('assets/sound/jump.ogg')
-  endSound = loadSound('assets/sound/end.ogg')
-  
   // Create new Objects
   player = new Player()
   obstacles.push(new Obstacle)
   score = new Score
+
+  // Sound files
+  soundFormats('mp3', 'ogg');
+  jumpSound = loadSound('assets/sound/jump.ogg')
+  endSound = loadSound('assets/sound/end.ogg')
   baseSound.setVolume(0.1)
   baseSound.play()
 
