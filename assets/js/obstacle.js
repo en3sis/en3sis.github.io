@@ -1,6 +1,6 @@
 class Obstacle{
   constructor(){
-    this.x = width
+    this.x = floor(random(380,400))
     this.y = 200
     this.height = 25
     this.width = 5

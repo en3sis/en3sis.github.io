@@ -1,21 +1,17 @@
-// Variables declaration
 let player, score, velocity, canJump, jumpSound, endSound, baseSound
-
-
 
 // Starting values
 velocity = 3
 
-
-
 let obstacles = []
 let clouds = []
 let cloudAppear = [100, 400, 700, 1200, 1500,1900,2000,2200,2400,3000]
+
 // Sounds by https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
-
-
 function preload(){
   baseSound = loadSound('assets/sound/base.mp3')
+  jumpSound = loadSound('assets/sound/jump.ogg')
+  endSound = loadSound('assets/sound/end.ogg')
 }
 
 function setup() {
@@ -27,8 +23,6 @@ function setup() {
 
   // Sound files
   soundFormats('mp3', 'ogg');
-  jumpSound = loadSound('assets/sound/jump.ogg')
-  endSound = loadSound('assets/sound/end.ogg')
   baseSound.setVolume(0.1)
   baseSound.play()
 
@@ -60,9 +54,7 @@ function draw() {
     obstacles[i].update()
 
     // Detect collision between player and obstacle
-    if(obstacles[i].hits(player)){
-      console.log(`hit`)
-    }
+    if(obstacles[i].hits(player)){    }
 
     // Remove obstacle from array
     if(obstacles[i].offScreen()){
