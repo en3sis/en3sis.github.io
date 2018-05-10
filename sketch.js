@@ -8,7 +8,7 @@ startGame = false
 
 let obstacles = []
 let clouds = []
-let cloudAppear = [100, 400, 700, 1200, 1500, 1900, 2000, 2200, 2400, 3000]
+let cloudAppear = [130, 420, 720, 1220, 1520, 1920, 2200, 2220, 2420, 3320]
 
 // Sounds by https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
 function preload(){
@@ -84,6 +84,7 @@ function draw() {
   for(let i = 0; i < cloudAppear.length; i++){
     if(score.score ==  cloudAppear[i]){
       clouds.push(newCloud);
+      obstacles.push(new Obstacle)
     }
   }
 
