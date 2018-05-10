@@ -18,6 +18,7 @@ function preload(){
 }
 
 function setup() {
+  // Calculate window with and add paddings.
   ww = windowWidth * 0.95
 
   createCanvas(ww , 400)
