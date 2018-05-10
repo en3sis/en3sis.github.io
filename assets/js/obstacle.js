@@ -38,13 +38,19 @@ class Obstacle{
 
     // Game over function
     this.gameOver = function(){
+        push()
         noFill()
         strokeWeight(1);
         stroke(0)
         rect(width / 2 - 55, height / 2 - 90, 100,20)
-        fill(0)
-        noStroke()
-        text("Game over!", width / 2 - 35, height / 2 - 77)
+        pop()
+
+        push()
+          fill(0)
+          text("Game over!", width / 2 - 35, height / 2 - 77)
+        pop()
+
+        // Stop base sound and play the death sound
         endSound.setVolume(0.3)
         endSound.play()
         baseSound.stop()

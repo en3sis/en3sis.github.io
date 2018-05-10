@@ -1,11 +1,14 @@
-let player, score, velocity, canJump, jumpSound, endSound, baseSound
+let player, score, velocity, canJump, jumpSound, endSound, baseSound, playButton, startGame, ww
 
 // Starting values
 velocity = 3
+startGame = false
+
+
 
 let obstacles = []
 let clouds = []
-let cloudAppear = [100, 400, 700, 1200, 1500,1900,2000,2200,2400,3000]
+let cloudAppear = [100, 400, 700, 1200, 1500, 1900, 2000, 2200, 2400, 3000]
 
 // Sounds by https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
 function preload(){
@@ -15,7 +18,10 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(400, 400)
+  ww = windowWidth * 0.95
+
+  createCanvas(ww , 400)
+  console.log(windowWidth)
   // Create new Objects
   player = new Player()
   obstacles.push(new Obstacle)
@@ -26,11 +32,18 @@ function setup() {
   baseSound.setVolume(0.1)
   baseSound.play()
 
+  // Instruction
 }
 
 function draw() {
   // Canvas decoration
   background(255 )
+
+  // Instructions
+  push()
+    noStroke()
+    text("Press SPACE or TAP to jump!", width / 2 - 90, 340)
+  pop()
 
   // Call Player
   player.show()
@@ -82,25 +95,32 @@ function draw() {
     player.up()
   }
 
+  // Movment of the clouds
   for (i = 0; i < clouds.length; i++) {
-		var currentObj = clouds[i];
-		cloud(currentObj.xpos, currentObj.ypos, currentObj.size);
-		currentObj.xpos -= 0.5;
-		currentObj.ypos -= random(-0.5, 0.5);
-		if (clouds[i].xpos > width+20) {
-			clouds.splice(i, 1);
-		}
-	}
+    var currentObj = clouds[i];
+    cloud(currentObj.xpos, currentObj.ypos, currentObj.size);
+    currentObj.xpos -= 0.5;
+    currentObj.ypos -= random(-0.5, 0.5);
+    if (clouds[i].xpos > width+20) {
+      clouds.splice(i, 1);
+    }
+  }
+
 }
+// end draw()
+
+
 
 // Clouds by http://alpha.editor.p5js.org/jackiezen/sketches/rJEziNOR
 function cloud(x, y, size) {
-	fill("#E0DFDF");
+  push()
+  fill("#E0DFDF");
 	noStroke();
 	arc(x, y, 25 * size, 20 * size, PI + TWO_PI, TWO_PI);
 	arc(x + 10, y, 25 * size, 45 * size, PI + TWO_PI, TWO_PI);
 	arc(x + 25, y, 25 * size, 35 * size, PI + TWO_PI, TWO_PI);
-	arc(x + 40, y, 30 * size, 20 * size, PI + TWO_PI, TWO_PI);
+  arc(x + 40, y, 30 * size, 20 * size, PI + TWO_PI, TWO_PI);
+  pop()
 }
 
 // Jump on Space
@@ -110,3 +130,17 @@ function keyPressed(){
     return false;
   }
 }
+
+
+
+
+
+
+
+// function togglePlay(){
+//   if(startGame){
+//     loop();
+//   }else{
+//     noLoop();
+//   }
+// }

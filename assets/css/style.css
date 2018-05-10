@@ -1,10 +1,26 @@
+
 button{
-  display: block;
+  /* display: block;
   position: absolute;
-  margin: 420px 0 0 180px;
+  margin: 420px 0 0 180px; */
   border: none;
   border-radius: 5px;
-  background: #03A9F4;
+  background: #000000;
   color: #fff;
   padding: 10px 20px;
+  outline: none;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  padding: 20px 0;
+}
+
+canvas{
+  box-shadow: 3px 7px 16px 6px #9e9e9e29;
+  width: 100%;
+  margin: 0 auto;
 }
