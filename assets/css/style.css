@@ -9,13 +9,15 @@ button{
   color: #fff;
   padding: 10px 20px;
   outline: none;
+  float: right;
+  margin: 10px 0;
 }
 
 .buttons{
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 400px;
+  justify-content: flex-end;
+  max-width: 700px;
+  width: 100%;
   padding: 20px 0;
 }
 
