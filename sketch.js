@@ -24,7 +24,7 @@ function setup() {
   }
 
   createCanvas(ww , 400)
-  console.log(windowWidth)
+  // console.log(windowWidth)
   // Create new Objects
   player = new Player()
   obstacles.push(new Obstacle)

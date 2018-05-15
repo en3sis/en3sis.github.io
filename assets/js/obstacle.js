@@ -37,19 +37,21 @@ class Obstacle {
 
     // Game over function
     this.gameOver = function() {
-        push()
-          noFill()
-          strokeWeight(1);
-          stroke(0)
-          rect(width / 2 - 55, height / 2 - 90, 100,20)
-        pop()
+      push()
+        noFill()
+        strokeWeight(1);
+        stroke(0)
+        rect(width / 2 - 55, height / 2 - 90, 100,20)
+      pop()
 
-        // console.log(score.score)
-        // console.log(score.best)
-        if(score.score > score.best){
-          score.best = score.score
-        }else{
-          score.best = localStorage.getItem("bestScore")
+        let bestScore = 0
+        if(score.score > localStorage.getItem("bestScore")){
+            bestScore = score.score
+            updateBest(floor(bestScore))
+        }
+
+        function updateBest(el) {
+          localStorage.setItem("bestScore", el)
         }
 
         push()
@@ -60,7 +62,6 @@ class Obstacle {
         // Stop base sound and play the death sound
         endSound.play()
         baseSound.stop()
-        localStorage.setItem("bestScore", floor(score.best))
     }
   }
 }
