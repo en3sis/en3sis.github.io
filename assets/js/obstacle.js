@@ -48,6 +48,8 @@ class Obstacle {
         // console.log(score.best)
         if(score.score > score.best){
           score.best = score.score
+        }else{
+          score.best = localStorage.getItem("bestScore")
         }
 
         push()
