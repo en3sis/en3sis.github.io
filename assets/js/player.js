@@ -17,10 +17,10 @@ class Player {
 
       // Add eyes to square
       fill(0)
-      strokeWeight(1);
-      stroke(0)
-      ellipse(this.x + 10, this.y + 5, 5, 5)
-      ellipse(this.x + 25, this.y + 5, 5, 5)
+        strokeWeight(1);
+        stroke(0)
+        ellipse(this.x + 10, this.y + 5, 5, 5)
+        ellipse(this.x + 25, this.y + 5, 5, 5)
       noStroke()
     };
 
@@ -42,7 +42,6 @@ class Player {
         return
       }else{
        this.y -= this.jump  * this.velocity
-       jumpSound.setVolume(0.1)
        jumpSound.play()
       }
     };

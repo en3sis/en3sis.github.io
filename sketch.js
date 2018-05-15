@@ -34,6 +34,8 @@ function setup() {
   soundFormats('mp3', 'ogg');
   baseSound.setVolume(0.1)
   baseSound.play()
+  jumpSound.setVolume(0.1)
+  endSound.setVolume(0.2)
 }
 
 function draw() {
@@ -69,7 +71,7 @@ function draw() {
     obstacles[i].update()
 
     // Detect collision between player and obstacle
-    if(obstacles[i].hits(player)){    }
+    if(obstacles[i].hits(player)){ return }
 
     // Remove obstacle from array
     if(obstacles[i].offScreen()) {
@@ -79,7 +81,6 @@ function draw() {
 
   // Display Score
   score.update()
-
 
   // Add cloud based on Score / Location
   for(let i = 0; i < cloudAppear.length; i++) {
@@ -132,17 +133,3 @@ function keyPressed() {
     return false;
   }
 }
-
-
-
-
-
-
-
-// function togglePlay(){
-//   if(startGame){
-//     loop();
-//   }else{
-//     noLoop();
-//   }
-// }

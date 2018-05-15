@@ -44,15 +44,21 @@ class Obstacle {
           rect(width / 2 - 55, height / 2 - 90, 100,20)
         pop()
 
+        // console.log(score.score)
+        // console.log(score.best)
+        if(score.score > score.best){
+          score.best = score.score
+        }
+
         push()
           fill(0)
           text("Game over!", width / 2 - 35, height / 2 - 77)
         pop()
 
         // Stop base sound and play the death sound
-        endSound.setVolume(0.3)
         endSound.play()
         baseSound.stop()
+        localStorage.setItem("bestScore", floor(score.best))
     }
   }
 }
