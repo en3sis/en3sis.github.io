@@ -8,7 +8,7 @@ class Player {
     this.jump = 30
     this.velocity = 2
 
-    this.show = function () {
+    this.show = () =>  {
       // Define square/player
       fill("#DC3545")
       stroke("#C5161F")
@@ -25,19 +25,19 @@ class Player {
     };
 
     // Update player
-    this.update = function () {
+    this.update = () =>  {
       if(this.y < 200){
         this.down()
       }
     };
 
     // Move player back to origina position
-    this.down = function(){
+    this.down = () => {
       this.y += this.velocity / this.gravity
     }
 
     // Limite the jump to one
-    this.up = function () {
+    this.up = () =>  {
       if(this.y <= 190){
         return
       }else{

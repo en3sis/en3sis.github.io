@@ -1,4 +1,4 @@
-let player, score, velocity, canJump, jumpSound, endSound, baseSound, playButton, startGame, ww
+let player, score, velocity, canJump, jumpSound, endSound, baseSound, playButton, startGame, ww, randomObstacles
 
 // Starting values
 velocity = 3
@@ -6,7 +6,7 @@ startGame = false
 
 let obstacles = []
 let clouds = []
-let cloudAppear = [130, 430, 720, 1190, 1510, 1920, 2200, 2220, 2420, 3320]
+let cloudAppear = [130, 430, 720, 1190, 1510, 1920, 2200, 2220, 2450, 3320]
 
 // Sounds by https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
 function preload() {
@@ -49,6 +49,7 @@ function draw() {
     text("Press SPACE or TAP to jump!", width / 2 - 90, 340)
   pop()
 
+
   // Call Player
   player.show()
   player.update()
@@ -86,7 +87,7 @@ function draw() {
   for(let i = 0; i < cloudAppear.length; i++) {
     if(score.score ==  cloudAppear[i]){
       clouds.push(newCloud);
-      obstacles.push(new Obstacle)
+      // obstacles.push(new Obstacle)
     }
   }
 
