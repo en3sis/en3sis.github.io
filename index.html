@@ -6,12 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Jumpfy</title>
 
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
   <!-- Open Graphic and Twitter  -->
 	<meta property="og:type" content="page" />
 	<meta property="og:title" content="Jumpfy" />
 	<meta property="og:description" content="A little game made with p5js similar to T-rex from Google" />
 	<meta property="og:site_name" content="Jumpfy" />
-	<meta property="og:image" content="assets/img/og.png" />
+	<meta property="og:image" content="img/og.png" />
 	<meta name="twitter:title" content="Jumpfy"/>
 	<meta name="twitter:description" content="A little game made with p5js similar to T-rex from Google"/>
 	<meta name="twitter:card" content="summary"/>
@@ -23,27 +31,18 @@
 
   <!-- Code -->
   <script src="sketch.js"></script>
-  <script src="assets/js/player.js"></script>
-  <script src="assets/js/obstacle.js"></script>
-  <script src="assets/js/score.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/obstacle.js"></script>
+  <script src="js/score.js"></script>
+  <script src="js/clouds.js"></script>
 
   <!-- Style -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
   <div class="page-wrap">
-    <!-- <p><b>SPACE / TAP</b> to jump </p> -->
-
     <div class="buttons">
-        <!-- <button onclick="location.reload(); "> Restart </button> -->
         <button class="play-stop" onclick="location.reload();"> Restart </button>
     </div>
     <div id="game-canvas"></div>

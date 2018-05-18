@@ -5,7 +5,7 @@ class Obstacle {
     this.height = 25
     this.width = 5
 
-    this.hits = function(player) {
+    this.hits = (player) => {
       // Detect colision / end game
       if(this.x <= player.x + 23 ||this.x <= player.x - 25 ){
         if(player.y >= 175 && this.x >= 10)  {
@@ -16,13 +16,13 @@ class Obstacle {
     }
 
     // Display Obstacle
-    this.show = function() {
+    this.show = () => {
       fill(0)
       rect(this.x, this.y, this.width , this.height)
     }
 
     //Calculate offScreen
-    this.offScreen = function() {
+    this.offScreen = () => {
       if(this.x < -width){
         return true
       }else{
@@ -31,12 +31,12 @@ class Obstacle {
     }
 
     // Increse speed
-    this.update = function() {
+    this.update = () => {
       this.x -= velocity;
     }
 
     // Game over function
-    this.gameOver = function() {
+    this.gameOver = () => {
       push()
         noFill()
         strokeWeight(1);

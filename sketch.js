@@ -1,4 +1,4 @@
-let player, score, velocity, canJump, jumpSound, endSound, baseSound, playButton, startGame, ww, randomObstacles
+let player, score, velocity, canJump, jumpSound, endSound, baseSound, playButton, startGame, ww, randomObstacles, newCloud
 
 // Starting values
 velocity = 3
@@ -10,9 +10,9 @@ let cloudAppear = [130, 430, 720, 1190, 1510, 1920, 2200, 2220, 2450, 3320]
 
 // Sounds by https://opengameart.org/content/100-plus-game-sound-effects-wavoggm4a
 function preload() {
-  baseSound = loadSound('assets/sound/base.mp3')
-  jumpSound = loadSound('assets/sound/jump.ogg')
-  endSound = loadSound('assets/sound/end.ogg')
+  baseSound = loadSound('sound/base.mp3')
+  jumpSound = loadSound('sound/jump.ogg')
+  endSound = loadSound('sound/end.ogg')
 }
 
 function setup() {
@@ -38,6 +38,13 @@ function setup() {
   baseSound.setVolume(0.1)
   jumpSound.setVolume(0.1)
   endSound.setVolume(0.2)
+
+  // CLOUD CONFIG
+  newCloud = {
+    xpos: width,
+    ypos: height / 2 - 100,
+    size: random(2, 2.7)
+  }
 }
 
 // =================================
@@ -53,17 +60,10 @@ function draw() {
     text("Press SPACE or TAP to jump!", width / 2 - 90, 340)
   pop()
 
-
   // Call Player
   player.show()
   player.update()
 
-  // CLOUD CONFIG
-  var newCloud = {
-    xpos: width,
-    ypos: height / 2 - 100,
-    size: random(2, 2.7)
-  }
 
   // Generate new Obstacle
   if(frameCount % 90 == 0) {
@@ -84,7 +84,7 @@ function draw() {
     }
   }
 
-  // Display Score
+  // Update, display current score and best score.
   score.update()
 
   // Add cloud based on Score / Location
@@ -116,20 +116,6 @@ function draw() {
   }
 }
 // end draw()
-
-
-
-// Clouds by http://alpha.editor.p5js.org/jackiezen/sketches/rJEziNOR
-function cloud(x, y, size) {
-  push()
-  fill("#E0DFDF");
-	noStroke();
-	arc(x, y, 25 * size, 20 * size, PI + TWO_PI, TWO_PI);
-	arc(x + 10, y, 25 * size, 45 * size, PI + TWO_PI, TWO_PI);
-	arc(x + 25, y, 25 * size, 35 * size, PI + TWO_PI, TWO_PI);
-  arc(x + 40, y, 30 * size, 20 * size, PI + TWO_PI, TWO_PI);
-  pop()
-}
 
 // Jump on Space
 function keyPressed() {
