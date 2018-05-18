@@ -44,14 +44,15 @@ class Obstacle {
         rect(width / 2 - 55, height / 2 - 90, 100,20)
       pop()
 
+        // Local storage of Best Score
         let bestScore = 0
 
         if(score.score > localStorage.getItem("bestScore")){
-            bestScore = score.score
-            updateBest(floor(bestScore))
+          bestScore = score.score
+          updateBest(floor(bestScore))
         }
 
-        (el) => {
+        function updateBest(el) {
           localStorage.setItem("bestScore", el)
         }
 

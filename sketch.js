@@ -13,18 +13,18 @@ function preload() {
   baseSound = loadSound('assets/sound/base.mp3')
   jumpSound = loadSound('assets/sound/jump.ogg')
   endSound = loadSound('assets/sound/end.ogg')
-
 }
 
 function setup() {
-  // Calculate window with and add paddings.
+  // Calculate window width and add paddings.
   ww = windowWidth * 0.95
   if(ww > 710){
     ww = 700
   }
 
+  // Setup responsive canvas
   createCanvas(ww , 400)
-  // console.log(windowWidth)
+
   // Create new Objects
   player = new Player()
   obstacles.push(new Obstacle)
@@ -32,14 +32,18 @@ function setup() {
 
   // Sound files
   soundFormats('mp3', 'ogg');
-  baseSound.setVolume(0.1)
   baseSound.play()
+
+  // Setup the volume for sounds
+  baseSound.setVolume(0.1)
   jumpSound.setVolume(0.1)
   endSound.setVolume(0.2)
 }
 
+// =================================
+//   Draw function
+// =================================
 function draw() {
-  // Canvas decoration
   background(255)
   fill(0)
 
